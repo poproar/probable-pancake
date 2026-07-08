@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Game Layout</title>
+  <style>
+    /* Global Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 16px;
+    }
+
+    header {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Core Mobile Memory Grid Setup */
+    main {
+      display: grid;
+      /* Creates a strict 4x4 matrix layout */
+      grid-template-columns: repeat(4, 1fr); 
+      gap: 12px;
+      width: 100%;
+      /* Restricts grid scaling to maintain mobile proportions */
+      max-width: 400px; 
+    }
+
+    /* Secret to forcing cards to remain perfect squares */
+    article {
+      background-color: #1f1f1f;
+      border: 2px solid #333333;
+      border-radius: 8px;
+      cursor: pointer;
+      position: relative;
+      /* Equalizes width and height fluidly */
+      aspect-ratio: 1 / 1; 
+      
+      /* Standard flex alignment to center icons or symbols later */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Visual feedback state for card placement */
+    article:active {
+      transform: scale(0.95);
+      background-color: #2a2a2a;
+    }
+
+    span {
+      font-size: 24px;
+      font-weight: bold;
+      color: #888888;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Memory Match</h1>
+  </header>
+
+  <!-- 4x4 Responsive Memory Grid Board -->
+  <main>
+    <article><span>?</span></article>
+    <article><span>?</span></article>
+    <article><span>?</span></article>
+    <article><span>?</span></article>
+
+    <article><span>?</span></article>
+    <article><span>?</span></article>
+    <article><span>?</span></article>
+    <article><span>?</span></article>
+
+    <article><span>?</span></article>
+    <article><span>?</span></article>
+    <article><span>?</span></article>
+    <article><span>?</span></article>
+
+    <article><span>?</span></article>
+    <article><span>?</span></article>
+    <article><span>?</span></article>
+    <article><span>?</span></article>
+  </main>
+
+</body>
+</html>
